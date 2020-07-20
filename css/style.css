@@ -10,21 +10,28 @@
 /*Variables Globales*/
 
 :root {
-    --color-primary: #2C3E50;
-    --color-white-90: #bfc5ca;    
+    --color-primary: #245483;
+    --color-white-90: #bfc5ca;
     --color-gray: #CACFD2;
 }
 
 label,
-input,h1,h2,h3,span,p,a {
+input,
+h1,
+h2,
+h3,
+span,
+p,
+a {
     display: block;
     font-family: "Lato", sans-serif;
-    outline:0;
+    outline: 0;
 }
 
-input{
-    box-sizing: border-box; 
-    outline:0;
+input {
+    box-sizing: border-box;
+    display: inline;
+    outline: 0;
 }
 
 
@@ -50,32 +57,34 @@ input{
     background-color: rgba(33, 47, 60, 0.8);
     padding: 25px 40px;
     border-radius: 5px;
-    -webkit-box-shadow: 3px 19px 23px -14px rgba(0,0,0,0.42);
--moz-box-shadow: 3px 19px 23px -14px rgba(0,0,0,0.42);
-box-shadow: 3px 19px 23px -14px rgba(0,0,0,0.42);
+    -webkit-box-shadow: 3px 19px 23px -14px rgba(0, 0, 0, 0.42);
+    -moz-box-shadow: 3px 19px 23px -14px rgba(0, 0, 0, 0.42);
+    box-shadow: 3px 19px 23px -14px rgba(0, 0, 0, 0.42);
 }
 
-.text-login{
+.text-login {
     color: var(--color-white-90);
     margin-top: 25px;
     margin-bottom: 40px;
 }
 
-.text-login img{
+.text-login img {
     width: 58px;
     margin-bottom: 10px;
 }
-.form-login .text-login{
+
+.form-login .text-login {
     width: 100%;
     text-align: center;
 }
 
-.form-login h2{
+.form-login h2 {
     margin-bottom: 10px;
     color: #fff;
 }
-.form-login span{
-    color:#fff;
+
+.form-login span {
+    color: #fff;
     font-size: 1.2rem;
 }
 
@@ -103,7 +112,7 @@ box-shadow: 3px 19px 23px -14px rgba(0,0,0,0.42);
     background-color: transparent;
     color: #fff;
     border-bottom: 1px solid var(--color-white-90);
-    box-sizing: border-box; 
+    box-sizing: border-box;
     border-collapse: separate;
     padding-bottom: 10px;
     border-spacing: 15px 50px;
@@ -114,7 +123,7 @@ box-shadow: 3px 19px 23px -14px rgba(0,0,0,0.42);
     opacity: 0.5;
 }
 
-.components .btnlogin{
+.components .btnlogin {
     margin-top: 10%;
     width: 100%;
     outline: 0;
@@ -127,19 +136,263 @@ box-shadow: 3px 19px 23px -14px rgba(0,0,0,0.42);
     cursor: pointer;
 }
 
-.components .btnlogin:hover{
-   background-color:  #273748;
+.components .btnlogin:hover {
+    background-color: #273748;
 }
 
-.forgot-pass{
+.forgot-pass {
     color: #808b96;
-    outline:0;
+    outline: 0;
     text-decoration: none;
     width: 100%;
     text-align: center;
     margin-top: 25px;
 }
 
-.forgot-pass:hover{
+.forgot-pass:hover {
     color: #ccd0d5;
+}
+
+/* Nav Header ***************************************/
+/****************************************************/
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+
+}
+
+.menu-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.list-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-nav ul {
+    list-style: none;
+}
+
+.menu-nav ul li {
+    display: inline;
+}
+
+.link-menu {
+    font-size: 14px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    padding: 25px 15px;
+}
+
+.link-menu:hover {
+    background-color: #204b75;
+}
+
+.menu-nav .logo-nav {
+    width: 54px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+
+
+
+/*Estilos de Formulario *****************************/
+/****************************************************/
+
+.container-form {
+    padding: 5%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-form h2 {
+    color: var(--color-primary);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+    letter-spacing: -0.9px;
+}
+
+.container-form span{
+    color: var(--color-white-90);
+    font-size: 1.2rem;
+}
+
+.form-principal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.frm {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-field {
+    margin-bottom: 2rem;
+    
+}
+
+.input-field label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #808b96;
+}
+
+.input-field .input-text {
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    border-radius: 5px;
+    border: 0;
+    background-color: #E6EAED;
+    width: 100%;
+}
+
+.input-field,
+.btn-form {
+    width: 50%;
+}
+
+.form-principal .btn-form {
+    padding: 18px 15px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    background-color: var(--color-primary);
+    outline: 0;
+    border: 0;
+    color: #fff;
+    display: inline;
+    cursor: pointer;
+}
+
+.form-principal .btn-form:hover {
+    background-color: #204b75;
+}
+
+
+/*Index *********************************/
+.containter-title-body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    padding: 25px 15px;
+}
+
+.containter-title-body img {
+    max-width: 60%;
+    width: 350px;
+}
+
+.containter-title-body h1 {
+    color: var(--color-primary);
+    font-size: 4rem;
+    font-family: 'Lato', serif;
+    background-color: #fff;
+    padding: 10px 15px;
+}
+
+.bg-index {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/images/bg-index.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-body {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin: auto;
+}
+
+.text-body {
+    align-self: flex-start;
+}
+
+.text-body span {
+    color: #D0D3D4;
+    font-size: 1.5rem;
+    vertical-align: middle;
+}
+
+.text-body h2 {
+    font-size: 6rem;
+    font-family: 'Playfair Display', serif;
+    color: #f1f1f1;
+    font-weight: normal;
+
+
+}
+
+
+.container-body .image-body img {
+    border-radius: 10px;
+    -webkit-box-shadow: -2px 14px 32px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -2px 14px 32px -12px rgba(0, 0, 0, 0.75);
+    box-shadow: -2px 14px 32px -12px rgba(0, 0, 0, 0.75);
+}
+
+.btn-body {
+    margin-top: 10px;
+    background-color: var(--color-primary);
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btn-body:hover {
+    background-color: #204b75;
+}
+
+.btn-body-2 {
+    margin-top: 10px;
+    box-shadow: inset 0 0 0 3px var(--color-primary);
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    color: #39658f;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btn-body-2:hover {
+    background-color: var(--color-primary);
+    color: #fff;
 }
