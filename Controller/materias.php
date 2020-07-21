@@ -5,7 +5,7 @@ if (isset($_SESSION['user'])){
 
 }
 
-if (isset($_POST['Usuario']) && isset($_POST['Contrasena']){
+if (isset($_POST['Nombre'])){
     
     $json = new stdClass();
     $json->nombre = $_POST["Nombre"];
