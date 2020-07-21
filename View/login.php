@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +19,7 @@
 
        <form action="..\Controller\validation.php?option=login" method="POST">
        <div class="components">     
-                
+
             <label>Usuario</label>
             <input class="input-text-login" name="Usuario" type="text"  required>
             <br><br>
