@@ -21,11 +21,13 @@
                 <h3>Carreras</h3>
                 <form>
                     <div>
+                    <form action="..\Controller\carreras.php" method="POST">
                         <label>Nombre de la carrera: </label>
-                        <input type="text">
-                        <input type="submit" class="btn-submit" value="Agregar">
-                        <br />
-                        <span>Registro agregado correctamente!</span>
+                            <input type="text" name="Nombre" required>
+                            <input type="submit" class="btn-submit" value="Agregar">
+                            <br />
+                            <span>Registro agregado correctamente!</span>
+                        </form>
                     </div>
                 </form>
                 <div class="table-registros">
@@ -39,7 +41,8 @@
                         <tr>
                             <td>1</td>
                             <td>Ing. Sistemas</td>
-                            <td style="text-align: center; width: 10px;"><a href="#" class="delete-item"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                            <td style="text-align: center; width: 10px;">
+                            <a href="base-conocimientos.php?option=delete" id="delete" class="delete-item"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                         </tr>
                     </table>
                 </div>
