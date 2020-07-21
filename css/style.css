@@ -34,6 +34,11 @@ input {
     outline: 0;
 }
 
+input[type="submit"] {
+    border: 0;
+    outline: 0;
+}
+
 
 
 /* Login ***********************************/
@@ -171,7 +176,6 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
 }
 
 .list-nav {
@@ -203,12 +207,12 @@ header {
     background-color: #204b75;
 }
 
-.menu-nav .logo-nav {
-    width: 54px;
+header .logo-nav {
+    width: 52px;
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 15px;
+    float: left;
 }
-
 
 
 
@@ -232,13 +236,13 @@ header {
     letter-spacing: -0.9px;
 }
 
-.container-form span{
+.container-form span {
     color: var(--color-white-90);
     font-size: 1.2rem;
 }
 
 .form-principal {
-    width: 100%;
+    min-width: 25%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -246,7 +250,7 @@ header {
 }
 
 .frm {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -255,7 +259,7 @@ header {
 
 .input-field {
     margin-bottom: 2rem;
-    
+
 }
 
 .input-field label {
@@ -275,7 +279,7 @@ header {
 
 .input-field,
 .btn-form {
-    width: 50%;
+    width: 100%;
 }
 
 .form-principal .btn-form {
@@ -395,4 +399,203 @@ header {
 .btn-body-2:hover {
     background-color: var(--color-primary);
     color: #fff;
+}
+
+
+/*Pagina de Conocimientos*/
+/********************************************************************/
+.container-conocimiento {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 45px 25px;
+}
+
+.container-conocimiento h2 {
+    color: var(--color-primary);
+    font-size: 2.4rem;
+}
+
+.container-conocimiento span {
+    color: #D0D3D4;
+    font-size: 1.5rem;
+}
+
+.mod-form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 45px 10px;
+    margin-top: 25px;
+
+}
+
+.form-conocimiento {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.form-conocimiento h3 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+}
+
+.form-conocimiento form {
+    width: 100%;
+    padding: 1.5rem 15%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.form-conocimiento form label,
+input {
+    display: inline;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+
+.form-conocimiento input[type="text"] {
+    font-size: 1.2rem;
+    padding: 5px;
+    border: 1px solid #808b96;
+    border-radius: 5px;
+}
+
+.form-conocimiento input[type="submit"] {
+    padding: 8px 12px;
+    font-size: 1rem;
+    background-color: var(--color-primary);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.form-conocimiento form span {
+    font-size: 0.9rem;
+    display: inline-block;
+    color: #4CA42D;
+    margin-top: 5px;
+}
+
+
+.table-registros {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 35px;
+}
+
+.table-registros table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-registros th {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.table-registros table td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-family: "Lato", sans-serif;
+}
+
+
+
+.delete-item {
+    color: #A93226;
+    font-size: 1.4rem;
+}
+
+
+
+
+.mod-form-2 {}
+
+
+
+
+
+
+
+
+
+
+
+/*Acerca de ***************************************************/
+/**************************************************************/
+.container-acerca {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-acerca .content-miembros {
+    margin: auto;
+    width: 50%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-miembros h2{
+    color: var(--color-primary);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.content-miembros h3{
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 400;
+}
+.content-miembros .separator{
+    border: 2px solid #245483;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.content-miembros .team{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 25px 0;
+}
+
+.team .item{
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.item img{
+    width: 90%;
+    border-radius: 50%;
+}
+.team span{
+    color: #000;
+    margin-top: 10px;
+    text-align: center;
 }

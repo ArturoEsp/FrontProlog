@@ -15,7 +15,7 @@ include 'menu-header.html';
         <span>Ingresa tus datos correspondientes</span>
         <br>
         <div class="form-principal">
-            <form class="frm" action="">
+            <form class="frm" action="..\Controller\validation.php?option=login">
                 <div class="input-field">
                     <label>Nombre</label>
                     <input type="text" value="" maxlength="30" class="input-text">
@@ -31,7 +31,7 @@ include 'menu-header.html';
                     <input type="password" value="" maxlength="15" class="input-text">
                 </div>
 
-                <input type="button" value="Registrarse" class="btn-form">
+                <input type="submit" value="Registrarse" class="btn-form">
                 
             </form>
         </div>
