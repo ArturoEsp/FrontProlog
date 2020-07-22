@@ -17,7 +17,7 @@
            <span>Ingresa tu cuenta</span>
        </div>
 
-       <form action="..\Controller\validation.php?option=login" method="POST">
+       <form action="..\Controller\validation.php?" method="POST">
        <div class="components">     
 
             <label>Usuario</label>

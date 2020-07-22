@@ -15,20 +15,20 @@ include 'menu-header.html';
         <span>Ingresa tus datos correspondientes</span>
         <br>
         <div class="form-principal">
-            <form class="frm" action="..\Controller\validation.php?option=login">
+            <form method="POST" class="frm" action="..\Controller\usuario.php?option=register">
                 <div class="input-field">
                     <label>Nombre</label>
-                    <input type="text" value="" maxlength="30" class="input-text">
+                    <input type="text" value="" maxlength="30" class="input-text" name="Nombre">
                 </div>
 
                 <div class="input-field">
                     <label>Usuario</label>
-                    <input type="text" value="" maxlength="15" class="input-text">
+                    <input type="text" value="" maxlength="15" class="input-text" name="Usuario">
                 </div>
 
                 <div class="input-field">
                     <label>Contraseña</label>
-                    <input type="password" value="" maxlength="15" class="input-text">
+                    <input type="password" value="" maxlength="15" class="input-text" name="Contrasena">
                 </div>
 
                 <input type="submit" value="Registrarse" class="btn-form">
