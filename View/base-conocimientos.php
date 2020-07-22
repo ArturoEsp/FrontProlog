@@ -113,17 +113,34 @@
                         </tr>
 
                         <tr>
-                            <td>1</td>
-                            <td>Lógica</td>
-                            <td style="text-align: center; width: 10px;"><a href="#" class="delete-item"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-                            
-                        </tr>
+                            <?php
 
-                        <tr>
-                            <td>1</td>
-                            <td>Lógica</td>
-                            <td style="text-align: center; width: 10px;"><a href="#" class="delete-item"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-                            
+                            $json = new stdClass();
+                            $curl = new stdClass();
+                            $curl->URL = "http://192.168.99.100/ProyectoProlog/public/api/getmaterias";
+                            $curl->VERBO = "GET";
+                            $curl->DATA = json_encode($json);
+
+                            $data = new cURLRequest();
+
+                            $resultado = $data->ApiRest($curl);
+
+                            $jsonresultado = json_decode($resultado->body);
+
+                            //echo $jsonresultado;
+                            // print_r($jsonresultado);
+
+                            foreach ($jsonresultado as $obj) {
+                                $id = $obj->IdMateria;
+                                $nombre = $obj->Nombre;
+                                echo "<tr> <td> $id </td>
+                                <td> $nombre </td>
+                                <td style=\"text-align: center; width: 10px;\">
+                                <a href=\"../Controller/carreras.php?option=delete&id=$id\" id=\"delete\" class=\"delete-item\"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></a>
+                                </td> </tr>";
+                            }
+                            ?>
+                           
                         </tr>
                     </table>
                 </div>
