@@ -17,7 +17,11 @@
             <h2 style="font-size: 2.5rem;">Instituto Tecnológico de Zacatepec</h2>
             <h2>Programación Lógica y Funcional</h2>
             <hr class="separator" />
+            <div style="display: inherit;">
             <h3>Equipo Dinamita</h3>
+            <img src="https://img.icons8.com/color/48/000000/dynamite.png"/>
+            </div>
+            
             <div class="team">
                 <div class="item">
                     <img src="..\assets\images\arturo.png">

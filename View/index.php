@@ -24,7 +24,7 @@
 
             <a class="btn-body" href="registro-usuario.php">Registrate</a>
 
-            <a class="btn-body-2" style="margin-left: 25px;" href="login.html">Iniciar sesión</a>
+            <a class="btn-body-2" style="margin-left: 25px;" href="login.php">Iniciar sesión</a>
 
         </div>
 

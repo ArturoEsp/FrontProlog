@@ -48,7 +48,6 @@
                         <input type="text" name="Nombre" required>
                         <input type="submit" class="btn-submit" value="Agregar">
                         <br />
-
                     </div>
                 </form>
                 <div class="table-registros">

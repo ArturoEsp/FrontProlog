@@ -292,6 +292,7 @@ header .logo-nav {
     color: #fff;
     display: inline;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .form-principal .btn-form:hover {
@@ -377,8 +378,9 @@ header .logo-nav {
     padding: 15px 20px;
     font-size: 1.2rem;
     color: white;
-    border-radius: 15px;
+    border-radius: 7px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .btn-body:hover {
@@ -392,13 +394,14 @@ header .logo-nav {
     padding: 15px 20px;
     font-size: 1.2rem;
     color: #39658f;
-    border-radius: 15px;
+    border-radius: 7px;
     cursor: pointer;
+    text-decoration: none;
+    color: #fff;
 }
 
 .btn-body-2:hover {
     background-color: var(--color-primary);
-    color: #fff;
 }
 
 
@@ -449,7 +452,7 @@ header .logo-nav {
 
 .form-conocimiento form {
     width: 100%;
-    padding: 1.5rem 15%;
+    padding: 1.5rem 5%;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
