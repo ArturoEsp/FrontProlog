@@ -29,18 +29,17 @@ if (isset($_POST['Usuario']) && isset($_POST['Contrasena'])) {
 
    if($jsonresultado->mensaje == 1){
 
-        echo GetRolUsuario($usuario);
 
-       /*  if()
+        if(GetRolUsuario($usuario) == 1)
         {
             //$userSession->setCurrentUser("1");           
-            //header('Location: ../View/base-conocimientos.php');
+            header('Location: ../View/base-conocimientos.php');
         }
-         else
+         else if(GetRolUsuario($usuario) == 0)
         {
             //$userSession->setCurrentUser("0");s
-            //header('Location: ../View/index.php');
-        }  */
+            header('Location: ../View/index.php');
+        }  
 
     }
     
@@ -64,6 +63,11 @@ function GetRolUsuario($usuario){
     $resultado = $data->ApiRest($curl);
     
     $jsonresultado = json_decode($resultado->body);
+    $rol;
 
-    return $jsonresultado;
+    foreach ($jsonresultado as $obj){
+        $rol = $obj->Rol;
+    }
+
+    return $rol;
 }
