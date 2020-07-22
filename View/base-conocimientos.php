@@ -19,15 +19,13 @@
         <div class="mod-form">
             <div class="form-conocimiento">
                 <h3>Carreras</h3>
-                <form>
+                <form action="..\Controller\carreras.php" method="POST">
                     <div>
-                    <form action="..\Controller\carreras.php" method="POST">
                         <label>Nombre de la carrera: </label>
-                            <input type="text" name="Nombre" required>
-                            <input type="submit" class="btn-submit" value="Agregar">
-                            <br />
-                            <span>Registro agregado correctamente!</span>
-                        </form>
+                        <input type="text" name="Nombre" required>
+                        <input type="submit" class="btn-submit" value="Agregar">
+                        <br />
+                        <span>Registro agregado correctamente!</span>
                     </div>
                 </form>
                 <div class="table-registros">
