@@ -2,25 +2,74 @@
 include_once 'cURLRequest.php';
 
 if (isset($_POST['IdCarrera']) && isset($_POST['IdMateria']) && isset($_POST['Peso'])){
+    //if(GetExistente($_POST['IdCarrera'],$_POST['IdMateria'])==0){
+            $json = new stdClass();
+            $json->IdCarrera = $_POST["IdCarrera"];
+            $json->IdMateria = $_POST["IdMateria"];
+            $json->Peso = $_POST["Peso"];
+            
+            $curl = new stdClass();
+            $curl->URL = "http://apache/ProyectoProlog/public/api/setCarreraMaterias";
+            $curl->VERBO = "POST";  //CHECAR
+            $curl->DATA = json_encode($json);
+            
+            $data = new cURLRequest();
 
-    $json = new stdClass();
-    $json->IdCarrera = $_POST["IdCarrera"];
-    $json->IdMateria = $_POST["IdMateria"];
-    $json->Peso = $_POST["Peso"];
-    
-    $curl = new stdClass();
-    $curl->URL = "http://apache/ProyectoProlog/public/api/setCarreraMaterias";
-    $curl->VERBO = "POST";  //CHECAR
-    $curl->DATA = json_encode($json);
-    
-    $data = new cURLRequest();
+            $resultado = $data->ApiRest($curl);
+            
+            $jsonresultado = json_decode($resultado->body);
+            //header('Location: ../View/base-conocimientos.php');
 
-    $resultado = $data->ApiRest($curl);
+            var_dump(GetExistente($_POST['IdCarrera'],$_POST['IdMateria']));
+
+            //
+            // if($jsonresultado->mensaje == 1){
+
+
+            //     if(GetExistente($usuario) == 1)
+            //     {
+            //         //$userSession->setCurrentUser("1");           
+            //         //header('Location: ../View/base-conocimientos.php');
+            //         $MensajeCarrera = $jsonresultado->mensaje;
+            //     }
+            //      else if(GetExistente($usuario) == 0)
+            //     {
+            //         //$userSession->setCurrentUser("0");
+            //         header('Location: ../View/index.php');
+            //     }  
+        
+            //}
+
+            // $MensajeCarrera = $jsonresultado->mensaje;
+            // header('Location: ../View/base-conocimientos.php');
+        //}
+    }
+
+    function GetExistente($IdMateria,$IdCarrera){
     
-    $jsonresultado = json_decode($resultado->body);
-    $MensajeCarrera = $jsonresultado->mensaje;
-    header('Location: ../View/base-conocimientos.php');
-}
+        $json = new stdClass();
+        $json->IdMateria = $IdMateria;
+        $json->IdCarrera = $IdCarrera;
+        
+        
+        $curl = new stdClass();
+        $curl->URL = "http://apache/ProyectoProlog/public/api/getCarreraMateria";
+        $curl->VERBO = "GET";
+        $curl->DATA = json_encode($json);
+    
+        $data = new cURLRequest();
+        $resultado = $data->ApiRest($curl);
+        
+        $jsonresultado = json_decode($resultado->body);
+        $mensaje;
+    
+        // foreach ($jsonresultado as $obj){
+        //     $mensaje = $obj->mensaje;
+        // }
+    
+        return $mensaje;
+    }
+
 
 
 /////////////////////////////////////
