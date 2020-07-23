@@ -1,7 +1,7 @@
 <?
 include_once 'cURLRequest.php';
 
-if(($_GET['option']) == "register"){
+if(isset($_POST['Nombre']) && isset($_POST['Usuario']) && isset($_POST['Contrasena'])){
 
     $json = new stdClass();
     $json->Nombre = $_POST["Nombre"];   
@@ -9,7 +9,7 @@ if(($_GET['option']) == "register"){
     $json->Contrasena = $_POST["Contrasena"];   
 
     $curl = new stdClass();
-    $curl->URL = "http://192.168.99.100/ProyectoProlog/public/api/usuarios";
+    $curl->URL = "http://apache/ProyectoProlog/public/api/usuarios";
     $curl->VERBO = "POST";
     $curl->DATA = json_encode($json);
 
@@ -18,6 +18,6 @@ if(($_GET['option']) == "register"){
     $resultado = $data->ApiRest($curl);
     
     $jsonresultado = json_decode($resultado->body);
-
+    
     header('Location: ../View/login.php');
 }

@@ -9,13 +9,14 @@
 <body>
     <?php
 include 'menu-header.html';
+include_once '../Controller/usuario.php';
 ?>
     <div class="container-form">
         <h2>Registrar nuevo usuario</h2>
         <span>Ingresa tus datos correspondientes</span>
         <br>
         <div class="form-principal">
-            <form method="POST" class="frm" action="..\Controller\usuario.php?option=register">
+            <form class="frm" action="..\Controller\usuario.php?" method="POST">
                 <div class="input-field">
                     <label>Nombre</label>
                     <input type="text" value="" maxlength="30" class="input-text" name="Nombre">
