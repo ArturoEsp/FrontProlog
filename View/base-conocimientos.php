@@ -228,28 +228,49 @@
                     </div>
                 </form>
                 <div class="table-enlazar">
-                    <table>
-                        <tr>
-                            <?php
-                            foreach ($jsoncarrera as $obj) {
-                                $id = $obj->IdCarrera;
-                                $nombre = $obj->Nombre;
-                                echo "  <table>
-                                            <tr>
-                                                <th>$nombre</th>
-                                                <th>Peso</th>
-                                            </tr>
-                                            <tr>
-                                                <td>Popo</td>
-                                                
-                                            </tr>    
-                                        </table>";
+                    <?php
+                        
+
+                        echo"<table>
+                                <tr>";
+                        foreach ($jsoncarrera as $obj) {
+                            $id = $obj->IdCarrera;
+                            $nombre = $obj->Nombre;
+
+                            $json = new stdClass();
+                            $json->IdCarrera = $id;
+
+                            $curl = new stdClass();
+                            $curl->URL = "http://apache/ProyectoProlog/public/api/getpesomateria";
+                            $curl->VERBO = "GET";
+                            $curl->DATA = json_encode($json);
+
+                            $data = new cURLRequest();
+
+                            $resultado = $data->ApiRest($curl);
+
+                            $jsonresultado = json_decode($resultado->body);
+
+                            echo"
+                                <th>$nombre</th>
+                                <th>Peso</th>
+                                ";
+                            echo"</tr>";
+                            foreach ($jsonresultado as $obj) {
+                                $Nombre = $obj->Nombre;
+                                $peso = $obj->Peso;
+                                echo"<tr>
+                                        <td>$Nombre</td>
+                                        <td style='padding-left:3%;'>$peso</td>
+                                    </tr>";
                             }
-                            ?>
-                   
+                        }
+                        
+                        
+                        echo"</table>";
+                    ?>
                 </div>
             </div>
-
         </div>
     </div>
 </body>
