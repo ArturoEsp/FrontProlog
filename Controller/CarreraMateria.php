@@ -2,7 +2,11 @@
 include_once 'cURLRequest.php';
 
 if (isset($_POST['IdCarrera']) && isset($_POST['IdMateria']) && isset($_POST['Peso'])){
-    if(GetExistente($_POST['IdCarrera'],$_POST['IdMateria'])==0){
+
+    $idCarrera = $_POST['IdCarrera'];
+    $idMateria = $_POST['IdMateria'];
+
+     if(GetExistente($idCarrera, $idMateria) == 1){
             $json = new stdClass();
             $json->IdCarrera = $_POST["IdCarrera"];
             $json->IdMateria = $_POST["IdMateria"];
@@ -22,18 +26,17 @@ if (isset($_POST['IdCarrera']) && isset($_POST['IdMateria']) && isset($_POST['Pe
         }
         else{
             header('Location: ../View/base-conocimientos.php');
-        }
+        } 
     }
 
     function GetExistente($IdMateria,$IdCarrera){
     
         $json = new stdClass();
-        $json->IdMateria = $IdMateria;
         $json->IdCarrera = $IdCarrera;
-        
+        $json->IdMateria = $IdMateria;
         
         $curl = new stdClass();
-        $curl->URL = "http://apache/ProyectoProlog/public/api/getCarreraMateria";
+        $curl->URL = "http://192.168.99.100/ProyectoProlog/public/api/getCarreraMateria";
         $curl->VERBO = "GET";
         $curl->DATA = json_encode($json);
     
