@@ -25,11 +25,29 @@
             }
         });
     }
+
+    //
+    function iniciar2() {
+        $("#valores").change(mostrarTitulo2);
+    }
+
+    function mostrarTitulo2() {
+        var x = $(this).val();
+        $.ajax({
+            url: "../Controller/materias.php",
+            type: "get",
+            success: function(data) {
+                $("#cajatexto").val(data);
+            }
+        });
+    }
+    //
 </script>
 
 <body>
     <?php
     include 'menu-header.html';
+    include_once '../Controller/carreras.php';
     include_once '../Controller/carreras.php';
 
 
@@ -95,7 +113,7 @@
 
             <div class="form-conocimiento">
                 <h3>Habilidades</h3>
-                <form action="..\Controller\.php?" method="POST">
+                <form action="..\Controller\materias.php?" method="POST">
                     <div>
                         <label>Nombre de la habilidad: </label>
                         <input type="text">
@@ -136,7 +154,7 @@
                                 echo "<tr> <td> $id </td>
                                 <td> $nombre </td>
                                 <td style=\"text-align: center; width: 10px;\">
-                                <a href=\"../Controller/carreras.php?option=delete&id=$id\" id=\"delete\" class=\"delete-item\"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></a>
+                                <a href=\"../Controller/materias.php?option=delete&id=$id\" id=\"delete\" class=\"delete-item\"><i class=\"fa fa-trash\" aria-hidden=\"true\"></i></a>
                                 </td> </tr>";
                             }
                             ?>
