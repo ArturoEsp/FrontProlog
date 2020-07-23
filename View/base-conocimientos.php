@@ -48,7 +48,7 @@
     <?php
     include 'menu-header.html';
     include_once '../Controller/carreras.php';
-    include_once '../Controller/carreras.php';
+    include_once '../Controller/getmaterias.php';
 
 
     ?>
@@ -116,10 +116,9 @@
                 <form action="..\Controller\materias.php?" method="POST">
                     <div>
                         <label>Nombre de la habilidad: </label>
-                        <input type="text">
+                        <input type="text" name="Nombre" required>
                         <input type="submit" class="btn-submit" value="Agregar">
                         <br />
-                        <span>Registro agregado correctamente!</span>
                     </div>
                 </form>
                 <div class="table-registros">
