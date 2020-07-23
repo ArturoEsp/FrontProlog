@@ -104,7 +104,7 @@
                                 </td> </tr>";
                             }
                             ?>
-                           
+
                         </tr>
                     </table>
 
@@ -157,7 +157,7 @@
                                 </td> </tr>";
                             }
                             ?>
-                           
+
                         </tr>
                     </table>
                 </div>
@@ -165,6 +165,69 @@
         </div>
 
         <div class="mod-form-2">
+            <div class="form-conocimiento">
+                <form action="" method="POST">
+                    <div>
+                        <label>Enlazar datos: </label>
+                        <select name="Carrera">
+                            <option value="">- Carrera -</option>
+                            <?php
+
+                            $json = new stdClass();
+                            $curl = new stdClass();
+                            $curl->URL = "http://192.168.99.100/ProyectoProlog/public/api/carreras";
+                            $curl->VERBO = "GET";
+                            $curl->DATA = json_encode($json);
+
+                            $data = new cURLRequest();
+
+                            $resultado = $data->ApiRest($curl);
+
+                            $jsonresultado = json_decode($resultado->body);
+
+                            //echo $jsonresultado;
+                            // print_r($jsonresultado);
+
+                            foreach ($jsonresultado as $obj) {
+                                $id = $obj->IdCarrera;
+                                $nombre = $obj->Nombre;
+                                echo "<option value = \"$id\">$nombre</option>";
+                            }
+                            ?>
+                        </select>
+                        <select name="Materia">
+                            <option value="">- Habilidad -</option>
+                            <?php
+
+                            $json = new stdClass();
+                            $curl = new stdClass();
+                            $curl->URL = "http://192.168.99.100/ProyectoProlog/public/api/getmaterias";
+                            $curl->VERBO = "GET";
+                            $curl->DATA = json_encode($json);
+
+                            $data = new cURLRequest();
+
+                            $resultado = $data->ApiRest($curl);
+
+                            $jsonresultado = json_decode($resultado->body);
+
+                            //echo $jsonresultado;
+                            // print_r($jsonresultado);
+
+                            foreach ($jsonresultado as $obj) {
+                                $id = $obj->IdMateria;
+                                $nombre = $obj->Nombre;
+                                echo "<option value = \"$id\">$nombre</option>";
+                            }
+                            ?>
+                        </select>
+
+                        <input type="text" name="Peso" placeholder="Peso" required style="width: 65px;" maxlength="2">
+                        <input type="submit" class="btn-submit" value="Agregar">
+                        <br />
+                    </div>
+                </form>
+            </div>
 
         </div>
     </div>

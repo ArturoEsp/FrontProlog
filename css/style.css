@@ -34,7 +34,7 @@ input {
     outline: 0;
 }
 
-input[type="submit"] {
+input[type="submit"]{
     border: 0;
     outline: 0;
 }
@@ -300,6 +300,7 @@ header .logo-nav {
 }
 
 
+
 /*Index *********************************/
 .containter-title-body {
     width: 100%;
@@ -467,7 +468,7 @@ input {
 }
 
 
-.form-conocimiento input[type="text"] {
+.form-conocimiento input[type="text"],select {
     font-size: 1.2rem;
     padding: 5px;
     border: 1px solid #808b96;
@@ -529,7 +530,14 @@ th {
 
 
 
-.mod-form-2 {}
+.mod-form-2 {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+}
 
 
 

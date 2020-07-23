@@ -40,23 +40,3 @@ if (($_GET['option'] == 'delete')){
 
     header('Location: ../View/base-conocimientos.php');
 } 
-
-    function showDatos(){
-        $json = new stdClass();   
-        $curl = new stdClass();
-        $curl->URL = "http://192.168.99.100/ProyectoProlog/public/api/carreras";
-        $curl->VERBO = "GET";
-        $curl->DATA = json_encode($json);
-        
-        $data = new cURLRequest();
-
-        $resultado = $data->ApiRest($curl);
-        
-        $jsonresultado = json_decode($resultado->body);
-
-        echo "<table><thead><tr><td>Fecha</td><td>Título</td><td>Enlace</td></tr></thead><tbody>";
-        foreach($jsonresultado as $post){
-            echo "<tr><td>".$post['IdCarrera']."</td><td>";
-        }
-        echo "</tbody></table>";
-    }
