@@ -169,7 +169,7 @@
                 <form action="..\Controller\CarreraMateria.php?" method="POST">
                     <div>
                         <label>Enlazar datos: </label>
-                        <select name="Carrera">
+                        <select name="IdCarrera">
                             <option value="">- Carrera -</option>
                             <?php
 
@@ -189,13 +189,13 @@
                             // print_r($jsonresultado);
 
                             foreach ($jsonresultado as $obj) {
-                                $id = $obj->IdCarrera;
+                                $IdCarrera = $obj->IdCarrera;
                                 $nombre = $obj->Nombre;
-                                echo "<option value = \"$id\">$nombre</option>";
+                                echo "<option value = \"$IdCarrera\">$nombre</option>";
                             }
                             ?>
                         </select>
-                        <select name="Materia">
+                        <select name="IdMateria">
                             <option value="">- Habilidad -</option>
                             <?php
 
@@ -215,9 +215,9 @@
                             // print_r($jsonresultado);
 
                             foreach ($jsonresultado as $obj) {
-                                $id = $obj->IdMateria;
+                                $IdMateria = $obj->IdMateria;
                                 $nombre = $obj->Nombre;
-                                echo "<option value = \"$id\">$nombre</option>";
+                                echo "<option value = \"$IdMateria\">$nombre</option>";
                             }
                             ?>
                         </select>
