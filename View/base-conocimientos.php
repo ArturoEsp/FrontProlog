@@ -165,7 +165,7 @@
         </div>
 
         <div class="mod-form-2">
-            <div class="form-conocimiento">
+            <div class="form-conocimiento" id="padre">
                 <form action="..\Controller\CarreraMateria.php?" method="POST">
                     <div>
                         <label>Enlazar datos: </label>
@@ -227,7 +227,7 @@
                         <br />
                     </div>
                 </form>
-                <div class="table-enlazar">
+                <div class="table-enlazar" id="hijo">
                     <?php
 
 
