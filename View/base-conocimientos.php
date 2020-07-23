@@ -231,9 +231,13 @@
                     <?php
                         
 
-                        echo"<table>
-                                <tr>";
+                      
+                      
                         foreach ($jsoncarrera as $obj) {
+
+                            
+                        echo"<table class=\"table-obj\">
+                        <tr>";
                             $id = $obj->IdCarrera;
                             $nombre = $obj->Nombre;
 
