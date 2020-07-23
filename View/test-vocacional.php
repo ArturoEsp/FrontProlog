@@ -18,14 +18,17 @@
 
         <div class="form-preguntas">
             <form>
-                <input value="¿Te gusta la matemáticas?" name="1" class="label-pregunta">
-
+                <label value="" name="Pregunta" class="label-pregunta">¿Te gusta la matemáticas?</label>
                 <div class="range-wrap" style="width: 100%;">
-                    <input type="range" class="range" min="50" max="60" step="2">
+                    <input type="range" class="range" min="0" max="10" step="1">
                     <output class="bubble"></output>
                 </div>
 
-
+                <label value="" name="Pregunta" class="label-pregunta">¿Te gusta la fisica?</label>
+                <div class="range-wrap" style="width: 100%;">
+                    <input type="range" class="range" min="0" max="10" step="1">
+                    <output class="bubble"></output>
+                </div>
             </form>
         </div>
     </div>
@@ -52,8 +55,20 @@
         const newVal = Number(((val - min) * 10) / (max - min));
         bubble.innerHTML = val;
 
+        if (val > 8) {
+            bubble.innerHTML = "Simona la mona"; //Siempre
+        } else if (val >= 7) {
+            bubble.innerHTML = "sip"; //De Acuerdo
+        } else if (val >= 4) {
+            bubble.innerHTML = "Hay maso"; // A veces
+        } else if (val >= 1) {
+            bubble.innerHTML = "nel krnal"; // En desacuerdo
+        } else {
+            bubble.innerHTML = "nelson mandela"; //Nunca
+        }
+
         // Sorta magic numbers based on size of the native UI thumb
-        bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+
     }
 </script>
 

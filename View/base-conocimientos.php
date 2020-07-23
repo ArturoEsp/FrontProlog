@@ -209,12 +209,12 @@
 
                             $resultado = $data->ApiRest($curl);
 
-                            $jsonresultado = json_decode($resultado->body);
+                            $jsonmateria = json_decode($resultado->body);
 
                             //echo $jsonresultado;
                             // print_r($jsonresultado);
 
-                            foreach ($jsonresultado as $obj) {
+                            foreach ($jsonmateria as $obj) {
                                 $IdMateria = $obj->IdMateria;
                                 $nombre = $obj->Nombre;
                                 echo "<option value = \"$IdMateria\">$nombre</option>";
@@ -222,58 +222,78 @@
                             ?>
                         </select>
 
-                        <input type="text" name="Peso" placeholder="Peso" required style="width: 65px;" maxlength="2">
+                        <input type="number" min="0" max="10" name="Peso" placeholder="Peso" required style="width: 65px;" maxlength="2">
                         <input type="submit" class="btn-submit" value="Agregar">
                         <br />
                     </div>
                 </form>
                 <div class="table-enlazar">
                     <?php
-                        
 
-                      
-                      
-                        foreach ($jsoncarrera as $obj) {
 
-                            
-                        echo"<table class=\"table-obj\">
+                    foreach ($jsoncarrera as $obj) {
+
+
+                        echo "<table class=\"table-obj\">
                         <tr>";
-                            $id = $obj->IdCarrera;
-                            $nombre = $obj->Nombre;
+                        $id = $obj->IdCarrera;
+                        $nombre = $obj->Nombre;
 
-                            $json = new stdClass();
-                            $json->IdCarrera = $id;
+                        $json = new stdClass();
+                        $json->IdCarrera = $id;
 
-                            $curl = new stdClass();
-                            $curl->URL = "http://apache/ProyectoProlog/public/api/getpesomateria";
-                            $curl->VERBO = "GET";
-                            $curl->DATA = json_encode($json);
+                        $curl = new stdClass();
+                        $curl->URL = "http://apache/ProyectoProlog/public/api/getpesomateria";
+                        $curl->VERBO = "GET";
+                        $curl->DATA = json_encode($json);
 
-                            $data = new cURLRequest();
+                        $data = new cURLRequest();
 
-                            $resultado = $data->ApiRest($curl);
+                        $resultado = $data->ApiRest($curl);
 
-                            $jsonresultado = json_decode($resultado->body);
+                        $jsonresultado = json_decode($resultado->body);
 
-                            echo"
+                        echo "
                                 <th>$nombre</th>
                                 <th>Peso</th>
                                 ";
-                            echo"</tr>";
-                            foreach ($jsonresultado as $obj) {
-                                $Nombre = $obj->Nombre;
-                                $peso = $obj->Peso;
-                                echo"<tr>
+                        echo "</tr>";
+                        foreach ($jsonresultado as $obj) {
+                            $Nombre = $obj->Nombre;
+                            $peso = $obj->Peso;
+                            echo "<tr>
                                         <td>$Nombre</td>
                                         <td style='padding-left:3%;'>$peso</td>
                                     </tr>";
-                            }
                         }
-                        
-                        
-                        echo"</table>";
+                    }
+                    echo "</table>";
                     ?>
                 </div>
+            </div>
+        </div>
+
+        <div class="form-preguntas">
+            <div class="form-conocimiento">
+                <h3>Preguntas</h3>
+                <form action="..\Controller\carreras.php?" method="POST">
+                    <div>
+                        <label>Pregunta: </label>
+                        <input type="text" name="Nombre" required>
+                        <select name="IdMateria">
+                            <option value="">- Habilidad -</option>
+                            <?php
+
+                            foreach ($jsonmateria as $obj) {
+                                $IdMateria = $obj->IdMateria;
+                                $nombre = $obj->Nombre;
+                                echo "<option value = \"$IdMateria\">$nombre</option>";
+                            }
+                            ?>
+                        </select>
+                        <input type="submit" class="btn-submit" value="Agregar">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
