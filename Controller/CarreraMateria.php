@@ -2,7 +2,7 @@
 include_once 'cURLRequest.php';
 
 if (isset($_POST['IdCarrera']) && isset($_POST['IdMateria']) && isset($_POST['Peso'])){
-    //if(GetExistente($_POST['IdCarrera'],$_POST['IdMateria'])==0){
+    if(GetExistente($_POST['IdCarrera'],$_POST['IdMateria'])==0){
             $json = new stdClass();
             $json->IdCarrera = $_POST["IdCarrera"];
             $json->IdMateria = $_POST["IdMateria"];
@@ -18,31 +18,11 @@ if (isset($_POST['IdCarrera']) && isset($_POST['IdMateria']) && isset($_POST['Pe
             $resultado = $data->ApiRest($curl);
             
             $jsonresultado = json_decode($resultado->body);
-            //header('Location: ../View/base-conocimientos.php');
-
-            var_dump(GetExistente($_POST['IdCarrera'],$_POST['IdMateria']));
-
-            //
-            // if($jsonresultado->mensaje == 1){
-
-
-            //     if(GetExistente($usuario) == 1)
-            //     {
-            //         //$userSession->setCurrentUser("1");           
-            //         //header('Location: ../View/base-conocimientos.php');
-            //         $MensajeCarrera = $jsonresultado->mensaje;
-            //     }
-            //      else if(GetExistente($usuario) == 0)
-            //     {
-            //         //$userSession->setCurrentUser("0");
-            //         header('Location: ../View/index.php');
-            //     }  
-        
-            //}
-
-            // $MensajeCarrera = $jsonresultado->mensaje;
-            // header('Location: ../View/base-conocimientos.php');
-        //}
+            header('Location: ../View/base-conocimientos.php');
+        }
+        else{
+            header('Location: ../View/base-conocimientos.php');
+        }
     }
 
     function GetExistente($IdMateria,$IdCarrera){
@@ -61,13 +41,12 @@ if (isset($_POST['IdCarrera']) && isset($_POST['IdMateria']) && isset($_POST['Pe
         $resultado = $data->ApiRest($curl);
         
         $jsonresultado = json_decode($resultado->body);
-        $mensaje;
     
         // foreach ($jsonresultado as $obj){
         //     $mensaje = $obj->mensaje;
         // }
     
-        return $mensaje;
+        return $jsonresultado->mensaje;
     }
 
 
