@@ -89,12 +89,12 @@
 
                             $resultado = $data->ApiRest($curl);
 
-                            $jsonresultado = json_decode($resultado->body);
+                            $jsoncarrera = json_decode($resultado->body);
 
                             //echo $jsonresultado;
                             // print_r($jsonresultado);
 
-                            foreach ($jsonresultado as $obj) {
+                            foreach ($jsoncarrera as $obj) {
                                 $id = $obj->IdCarrera;
                                 $nombre = $obj->Nombre;
                                 echo "<tr> <td> $id </td>
@@ -166,7 +166,7 @@
 
         <div class="mod-form-2">
             <div class="form-conocimiento">
-                <form action="" method="POST">
+                <form action="..\Controller\CarreraMateria.php?" method="POST">
                     <div>
                         <label>Enlazar datos: </label>
                         <select name="Carrera">
@@ -227,6 +227,27 @@
                         <br />
                     </div>
                 </form>
+                <div class="table-enlazar">
+                    <table>
+                        <tr>
+                            <?php
+                            foreach ($jsoncarrera as $obj) {
+                                $id = $obj->IdCarrera;
+                                $nombre = $obj->Nombre;
+                                echo "  <table>
+                                            <tr>
+                                                <th>$nombre</th>
+                                                <th>Peso</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Popo</td>
+                                                
+                                            </tr>    
+                                        </table>";
+                            }
+                            ?>
+                   
+                </div>
             </div>
 
         </div>

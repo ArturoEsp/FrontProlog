@@ -539,8 +539,13 @@ th {
     padding: 5%;
 }
 
+.table-enlazar table{
+    display: inline;
+}
 
-
+.table-enlazar th:nth-child(even) {
+    background-color: #dddddd;
+  }
 
 
 
