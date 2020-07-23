@@ -81,7 +81,7 @@
 
                             $json = new stdClass();
                             $curl = new stdClass();
-                            $curl->URL = "http://192.168.99.100/ProyectoProlog/public/api/carreras";
+                            $curl->URL = "http://apache/ProyectoProlog/public/api/carreras";
                             $curl->VERBO = "GET";
                             $curl->DATA = json_encode($json);
 
@@ -134,7 +134,7 @@
 
                             $json = new stdClass();
                             $curl = new stdClass();
-                            $curl->URL = "http://192.168.99.100/ProyectoProlog/public/api/getmaterias";
+                            $curl->URL = "http://apache/ProyectoProlog/public/api/getmaterias";
                             $curl->VERBO = "GET";
                             $curl->DATA = json_encode($json);
 
@@ -175,7 +175,7 @@
 
                             $json = new stdClass();
                             $curl = new stdClass();
-                            $curl->URL = "http://192.168.99.100/ProyectoProlog/public/api/carreras";
+                            $curl->URL = "http://apache/ProyectoProlog/public/api/carreras";
                             $curl->VERBO = "GET";
                             $curl->DATA = json_encode($json);
 
@@ -201,7 +201,7 @@
 
                             $json = new stdClass();
                             $curl = new stdClass();
-                            $curl->URL = "http://192.168.99.100/ProyectoProlog/public/api/getmaterias";
+                            $curl->URL = "http://apache/ProyectoProlog/public/api/getmaterias";
                             $curl->VERBO = "GET";
                             $curl->DATA = json_encode($json);
 

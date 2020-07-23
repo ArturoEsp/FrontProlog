@@ -17,7 +17,7 @@ if (isset($_POST['Usuario']) && isset($_POST['Contrasena'])) {
     $json->contrasena = $_POST["Contrasena"];
     
     $curl = new stdClass();
-    $curl->URL = "http://192.168.99.100/ProyectoProlog/public/api/validation";
+    $curl->URL = "http://apache/ProyectoProlog/public/api/validation";
     $curl->VERBO = "GET";
     $curl->DATA = json_encode($json);
 
@@ -55,7 +55,7 @@ function GetRolUsuario($usuario){
     $json->usuario = $usuario;
     
     $curl = new stdClass();
-    $curl->URL = "http://192.168.99.100/ProyectoProlog/public/api/usuario";
+    $curl->URL = "http://apache/ProyectoProlog/public/api/usuario";
     $curl->VERBO = "GET";
     $curl->DATA = json_encode($json);
 
