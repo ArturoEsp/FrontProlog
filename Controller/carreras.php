@@ -9,7 +9,7 @@ if (isset($_POST['Nombre'])){
     $json->Nombre = $_POST["Nombre"];
     
     $curl = new stdClass();
-    $curl->URL = "http://192.168.99.100/ProyectoProlog/public/api/carrera";
+    $curl->URL = "http://apache/ProyectoProlog/public/api/carrera";
     $curl->VERBO = "POST";
     $curl->DATA = json_encode($json);
     
@@ -28,7 +28,7 @@ if (($_GET['option'] == 'delete')){
     $json->IdCarrera = $_GET["id"];
     
     $curl = new stdClass();
-    $curl->URL = "http://192.168.99.100/ProyectoProlog/public/api/carreradelete";
+    $curl->URL = "http://apache/ProyectoProlog/public/api/carreradelete";
     $curl->VERBO = "DELETE";
     $curl->DATA = json_encode($json);
 
