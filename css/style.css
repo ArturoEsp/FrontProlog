@@ -414,7 +414,7 @@ header .logo-nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 45px 25px;
+    padding: 20px 15px;
 }
 
 .container-conocimiento h2 {
@@ -423,7 +423,7 @@ header .logo-nav {
 }
 
 .container-conocimiento span {
-    color: #D0D3D4;
+    color: #707c80;
     font-size: 1.5rem;
 }
 
@@ -433,7 +433,7 @@ header .logo-nav {
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    padding: 45px 10px;
+    padding: 5px 10px;
     margin-top: 25px;
 
 }
@@ -538,8 +538,6 @@ th {
     align-items: center;
     padding: 5%;
 }
-
-
 
 
 

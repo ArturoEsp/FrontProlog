@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +9,7 @@
 <body class="bg-login">
    <div class="form-login">
        <div class="text-login">
-        <img src="../assets/images/iniciar-sesion.png">
+            <img src="../assets/images/iniciar-sesion.png">
            <h2>Acceso Restringido</h2>         
            <span>Ingresa tu cuenta</span>
        </div>
