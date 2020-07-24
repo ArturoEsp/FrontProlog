@@ -11,6 +11,7 @@
 
 <body>
     <?php include 'menu-header.html'; ?>
+    <?php include_once '../Controller/cURLRequest.php';?>
 
     <div class="contenedor-preguntas">
         <h2>Test Vocacional</h2>
@@ -18,17 +19,31 @@
 
         <div class="form-preguntas">
             <form>
-                <label value="" name="Pregunta" class="label-pregunta">¿Te gusta la matemáticas?</label>
-                <div class="range-wrap" style="width: 100%;">
-                    <input type="range" class="range" min="0" max="10" step="1">
-                    <output class="bubble"></output>
-                </div>
+                <?php
+                
+                    $json = new stdClass();
+                    $curl = new stdClass();
+                    $curl->URL = "http://apache/ProyectoProlog/public/api/getpreguntas";
+                    $curl->VERBO = "GET";
+                    $curl->DATA = json_encode($json);
+                
+                    $data = new cURLRequest();
+                    $resultado = $data->ApiRest($curl);
 
-                <label value="" name="Pregunta" class="label-pregunta">¿Te gusta la fisica?</label>
-                <div class="range-wrap" style="width: 100%;">
-                    <input type="range" class="range" min="0" max="10" step="1">
-                    <output class="bubble"></output>
-                </div>
+                    $jsonresultado = json_decode($resultado->body);
+
+                    foreach ($jsonresultado as $obj) {
+                        $IdPregunta = $obj->IdPregunta;
+                        $IdMateria = $obj->IdMateria;
+                        $pregunta = $obj->Pregunta;
+                        echo
+                            "<label value=\"\" name=\"Pregunta\" class=\"label-pregunta\">$IdPregunta. $pregunta</label>
+                            <div class=\"range-wrap\" style=\"width: 100%;\">
+                                <input type=\"range\" class=\"range\" min=\"0\" max=\"10\" step=\"1\">
+                                <output class=\"bubble\"></output>
+                            </div>";
+                    }
+                ?>
             </form>
         </div>
     </div>

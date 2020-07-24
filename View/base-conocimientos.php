@@ -276,18 +276,18 @@
         <div class="form-preguntas">
             <div class="form-conocimiento">
                 <h3>Preguntas</h3>
-                <form action="..\Controller\carreras.php?" method="POST">
+                <form action="..\Controller\preguntas.php?" method="POST">
                     <div>
                         <label>Pregunta: </label>
-                        <input type="text" name="Nombre" required>
-                        <select name="IdMateria">
+                        <input type="text" name="Pregunta" required>
+                        <select name="Materia">
                             <option value="">- Habilidad -</option>
                             <?php
 
                             foreach ($jsonmateria as $obj) {
                                 $IdMateria = $obj->IdMateria;
                                 $nombre = $obj->Nombre;
-                                echo "<option value = \"$IdMateria\">$nombre</option>";
+                                echo "<option  value = \"$IdMateria\">$nombre</option>";
                             }
                             ?>
                         </select>
