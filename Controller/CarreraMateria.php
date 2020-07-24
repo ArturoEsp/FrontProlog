@@ -6,7 +6,10 @@ if (isset($_POST['IdCarrera']) && isset($_POST['IdMateria']) && isset($_POST['Pe
     $idCarrera = $_POST['IdCarrera'];
     $idMateria = $_POST['IdMateria'];
 
-     if(GetExistente($idCarrera, $idMateria) == 1){
+    echo "Carrera ".$idCarrera;
+    echo "Materia ".$idMateria . " ";
+    echo existRegistro($idCarrera, $idMateria);
+    /* if(existRegistro($idCarrera, $idMateria) == 0){
             $json = new stdClass();
             $json->IdCarrera = $_POST["IdCarrera"];
             $json->IdMateria = $_POST["IdMateria"];
@@ -26,10 +29,10 @@ if (isset($_POST['IdCarrera']) && isset($_POST['IdMateria']) && isset($_POST['Pe
         }
         else{
             header('Location: ../View/base-conocimientos.php');
-        } 
+        }  */
     }
 
-    function GetExistente($IdMateria,$IdCarrera){
+    function existRegistro($IdMateria,$IdCarrera){
     
         $json = new stdClass();
         $json->IdCarrera = $IdCarrera;
