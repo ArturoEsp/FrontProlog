@@ -3,10 +3,10 @@ include_once 'cURLRequest.php';
 
 
 
-if (isset($_POST['Nombre'])){
+if (isset($_POST['NombreMateria'])){
     
     $json = new stdClass();
-    $json->Nombre = $_POST["Nombre"];
+    $json->Nombre = $_POST["NombreMateria"];
 
     $curl = new stdClass();
     $curl->URL = "http://apache/ProyectoProlog/public/api/setmateria";
@@ -19,7 +19,7 @@ if (isset($_POST['Nombre'])){
 
     $jsonresultado = json_decode($resultado->body);
     $MensajeMateria = $jsonresultado->mensaje;
-    header('Location: ../View/base-conocimientos.php');
+    
 }
 
 if (($_GET['option'] == 'delete')){
@@ -38,7 +38,7 @@ if (($_GET['option'] == 'delete')){
 
     $jsonresultado = json_decode($resultado->body);
 
-    header('Location: ../View/base-conocimientos.php');
+    
 }
 
   
