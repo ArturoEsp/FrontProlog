@@ -36,7 +36,7 @@ if (isset($_POST['IdCarrera']) && isset($_POST['IdMateria']) && isset($_POST['Pe
         $json->IdMateria = $IdMateria;
         
         $curl = new stdClass();
-        $curl->URL = "http://192.168.99.100/ProyectoProlog/public/api/getCarreraMateria";
+        $curl->URL = "http://apache/ProyectoProlog/public/api/getCarreraMateria";
         $curl->VERBO = "GET";
         $curl->DATA = json_encode($json);
     
@@ -53,7 +53,7 @@ if (isset($_POST['IdCarrera']) && isset($_POST['IdMateria']) && isset($_POST['Pe
     }
 
 
-
+/*
 /////////////////////////////////////
 /*function getCarreraMateria($request){
 
@@ -96,3 +96,4 @@ class consulta{
 
 
 }
+*/
