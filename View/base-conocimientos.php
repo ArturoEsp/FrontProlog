@@ -90,9 +90,9 @@
                         <input type="text" id="Pregunta" required>
 
                         <select id="idMateria2">
-
+            
                         </select>
-                        <input type="submit" class="btn-submit" value="Agregar" onclick="InsertarPregunta($('#idMateria2').val(),$('#Pregunta').val())">
+                        <input type="submit" class="btn-submit" value="Agregar" onclick="InsertarPregunta($('#idMateria2').val(), $('#Pregunta').val())">
                     </div>
                 </form>
                 <div class="table-registros" id="table-preguntas"></div>

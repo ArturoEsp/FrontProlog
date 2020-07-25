@@ -11,14 +11,11 @@
 
 <body>
     <?php include 'menu-header.html'; ?>
-    <?php include_once '../Controller/cURLRequest.php';?>
-
+    <?php include '../Controller/cURLRequest.php';?>
+    
     <div class="contenedor-preguntas">
         <h2>Test Vocacional</h2>
         <span>Contesta las preguntas sobre tus habilidades personales</span>
-
-        <div class="form-preguntas">
-            <form>
                 <?php
                 
                     $json = new stdClass();
@@ -31,27 +28,28 @@
                     $resultado = $data->ApiRest($curl);
 
                     $jsonresultado = json_decode($resultado->body);
-
+                
+                    echo"<form action='..\Controller\Motor.php?' method='GET'>";
                     foreach ($jsonresultado as $obj) {
                         $IdPregunta = $obj->IdPregunta;
                         $IdMateria = $obj->IdMateria;
                         $pregunta = $obj->Pregunta;
                         echo
-                            "<label value=\"\" name=\"Pregunta\" class=\"label-pregunta\">$IdPregunta. $pregunta</label>
-                            <div class=\"range-wrap\" style=\"width: 100%;\">
-                                <input name=\"input.$IdPregunta\" type=\"range\" class=\"range\" min=\"0\" max=\"10\" step=\"1\"> 
-                                <output class=\"bubble\"></output>
-                            </div>";
+                            "
+                                <label value=\"\" name=\"Pregunta\" class=\"label-pregunta\">$IdPregunta. $pregunta</label>
+                                <div class=\"range-wrap\" style=\"width: 100%;\">
+                                    <input type=\"hidden\" name=\"id$IdPregunta\" value=\"$IdPregunta\">
+                                    <input type=\"range\" name=\"Peso$IdPregunta\" class=\"range\" min=\"0\" max=\"10\" step=\"1\">
+                                    <output class=\"bubble\"></output>
+                                </div>
+                                
+                            ";
+                        //$array[] = array("IdPregunta"=>$IdPregunta,"PesoRespuesta"=>$_POST["PesoRespuesta"]);
+                        
                     }
-                    
-                    $array[] = array("idpregunta"=>$IdPregunta);
-
-                    foreach ($jsonresultado as $obj){
-
-                        $array['idpregunta'.$IdPregunta] = "input".$IdPregunta;  //->> idpregunta1,  idpregunta2, idpregunta3 ... 
-                    }
+                    echo"       <input type=\"submit\" value=\"Ingresar\" class=\"btnlogin\">
+                            </form>";
                 ?>
-            </form>
         </div>
     </div>
 

@@ -1,8 +1,6 @@
 <?
 include_once 'cURLRequest.php';
 
-
-
 if (isset($_POST['Nombre'])){
 
     $json = new stdClass();
