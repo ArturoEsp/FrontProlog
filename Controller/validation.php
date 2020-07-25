@@ -38,7 +38,7 @@ if (isset($_POST['Usuario']) && isset($_POST['Contrasena'])) {
          else if(GetRolUsuario($usuario) == 0)
         {
             //$userSession->setCurrentUser("0");
-            header('Location: ../View/index.php');
+            header('Location: ../View/test-vocacional.php');
         }  
 
     }
