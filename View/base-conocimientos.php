@@ -66,6 +66,7 @@
 
         <div class="mod-form-2">
             <div class="form-conocimiento" id="padre">
+            <h3 style="padding-top:25px;">Agregar Peso a Materias</h3>
                 <form action="..\Controller\CarreraMateria.php?" method="POST">
                     <div>
                         <label>Enlazar datos: </label>

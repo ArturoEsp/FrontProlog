@@ -12,7 +12,7 @@
 <body>
     <?php include 'menu-header.html'; ?>
     <?php include_once '../Controller/cURLRequest.php';?>
-
+    
     <div class="contenedor-preguntas">
         <h2>Test Vocacional</h2>
         <span>Contesta las preguntas sobre tus habilidades personales</span>
@@ -31,18 +31,29 @@
                     $resultado = $data->ApiRest($curl);
 
                     $jsonresultado = json_decode($resultado->body);
-
+                
+                    //$respuestas = new stdClass();
+                    $array = [];
+                    echo"<form action=\"../Controller/respuestas.php\" method=\"POST\">";
                     foreach ($jsonresultado as $obj) {
                         $IdPregunta = $obj->IdPregunta;
                         $IdMateria = $obj->IdMateria;
                         $pregunta = $obj->Pregunta;
                         echo
-                            "<label value=\"\" name=\"Pregunta\" class=\"label-pregunta\">$IdPregunta. $pregunta</label>
-                            <div class=\"range-wrap\" style=\"width: 100%;\">
-                                <input type=\"range\" class=\"range\" min=\"0\" max=\"10\" step=\"1\">
-                                <output class=\"bubble\"></output>
-                            </div>";
+                            "
+                                <label value=\"\" name=\"Pregunta\" class=\"label-pregunta\">$IdPregunta. $pregunta</label>
+                                <div class=\"range-wrap\" style=\"width: 100%;\">
+                                    <input type=\"range\" name=\"PesoRespuesta\" class=\"range\" min=\"0\" max=\"10\" step=\"1\">
+                                    <output class=\"bubble\"></output>
+                                </div>
+                                
+                            ";
+                        $array[] = array("IdPregunta"=>$IdPregunta,"PesoRespuesta"=>$_POST['PesoRespuesta']);
+                        
                     }
+                    echo"       <input type=\"submit\" value=\"Ingresar\" class=\"btnlogin\">
+                            </form>";
+                    var_dump($array);
                 ?>
             </form>
         </div>
