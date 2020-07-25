@@ -39,9 +39,16 @@
                         echo
                             "<label value=\"\" name=\"Pregunta\" class=\"label-pregunta\">$IdPregunta. $pregunta</label>
                             <div class=\"range-wrap\" style=\"width: 100%;\">
-                                <input type=\"range\" class=\"range\" min=\"0\" max=\"10\" step=\"1\">
+                                <input name=\"input.$IdPregunta\" type=\"range\" class=\"range\" min=\"0\" max=\"10\" step=\"1\"> 
                                 <output class=\"bubble\"></output>
                             </div>";
+                    }
+                    
+                    $array[] = array("idpregunta"=>$IdPregunta);
+
+                    foreach ($jsonresultado as $obj){
+
+                        $array['idpregunta'.$IdPregunta] = "input".$IdPregunta;  //->> idpregunta1,  idpregunta2, idpregunta3 ... 
                     }
                 ?>
             </form>

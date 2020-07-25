@@ -66,21 +66,17 @@
 
         <div class="mod-form-2">
             <div class="form-conocimiento" id="padre">
-                <form action="..\Controller\CarreraMateria.php?" method="POST">
+                <form  method="POST">
                     <div>
                         <label>Enlazar datos: </label>
-                        <div id="CarreraMaterias" style="display: inline;">
-
-                        </div>
-
-                        <input type="number" min="0" max="10" name="Peso" placeholder="Peso" required style="width: 65px;" maxlength="2">
-                        <input type="submit" class="btn-submit" value="Agregar">
+                        <div id="CarreraMaterias" style="display: inline;"></div>
+                        <input type="number" min="0" max="10" id="Peso" placeholder="Peso" required style="width: 65px;" maxlength="2">
+                        <input type="submit" class="btn-submit" value="Agregar" onclick="InsertarCarreraMateria($('#IdCarrera').val(),$('#IdMateria').val(),$('#Peso').val())">
                         <br />
                     </div>
                 </form>
                 <span></span>
                 <div class="table-enlazar" id="table-carreramaterias">
-
                 </div>
             </div>
         </div>
@@ -88,16 +84,18 @@
         <div class="form-preguntas">
             <div class="form-conocimiento">
                 <h3>Preguntas</h3>
-                <form action="..\Controller\preguntas.php?" method="POST">
+                <form>
                     <div>
                         <label>Pregunta: </label>
-                        <input type="text" name="Pregunta" required>
-                        <div id="CarreraMaterias" style="display: inline;">
+                        <input type="text" id="Pregunta" required>
 
-                        </div>
-                        <input type="submit" class="btn-submit" value="Agregar">
+                        <select id="idMateria2">
+
+                        </select>
+                        <input type="submit" class="btn-submit" value="Agregar" onclick="InsertarPregunta($('#idMateria2').val(),$('#Pregunta').val())">
                     </div>
                 </form>
+                <div class="table-registros" id="table-preguntas"></div>
             </div>
         </div>
     </div>

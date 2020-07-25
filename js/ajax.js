@@ -4,11 +4,11 @@ window.onload = function () {
     LoadCarreras();
     LoadCarreraMaterias();
     LoadTableCarreraMaterias();
+    LoadTablePreguntas();
+    LoadMateriasSelect();
 }
 
 function LoadMaterias() {
-
-
     $.ajax({
         url: '../Controller/queryMateria.php',
         type: 'POST',
@@ -87,7 +87,24 @@ function LoadCarreraMaterias() {
         },
         success: function (response) {
             $("#CarreraMaterias").html(response);
+            $("#CarreraMaterias2").html(response);
+        }
+    });
+}
 
+function LoadMateriasSelect() {
+    var parametros = {
+        'select': 'materias'
+    };
+    $.ajax({
+        data: parametros,
+        url: '../Controller/queryCarreraMaterias.php',
+        type: 'POST',
+        beforeSend: function () {
+            // $("#msg-carreras").html("Procesando, espere por favor");
+        },
+        success: function (response) {
+            $("#idMateria2").html(response);
         }
     });
 }
@@ -112,6 +129,78 @@ function LoadTableCarreraMaterias() {
     });
 }
 
-function InsertarCarreraMateria() {
+function InsertarCarreraMateria(idcarrera, idmateria, peso) {
 
+    var parametros = {
+        "IdCarrera": idcarrera,
+        "IdMateria": idmateria,
+        "Peso": peso
+    };
+    $.ajax({
+        data: parametros,
+        url: '../Controller/CarreraMateria.php',
+        type: 'POST',
+        beforeSend: function () {
+
+        },
+        success: function (response) {
+            LoadTableCarreraMaterias();
+        }
+    });
+}
+
+
+function LoadTablePreguntas() {
+    var parametros = {
+        'table': '1'
+    };
+    $.ajax({
+        data: parametros,
+        url: '../Controller/queryPreguntas.php',
+        type: 'POST',
+        beforeSend: function () {
+            $("#table-preguntas").html("Procesando, espere por favor");
+        },
+        success: function (response) {
+            $("#table-preguntas").html(response);
+
+        }
+    });
+}
+
+function InsertarPregunta(idmateria, pregunta) {
+    var parametros = {
+        'IdMateria': idmateria,
+        'Pregunta': pregunta,
+        'add': '1'
+    };
+    $.ajax({
+        data: parametros,
+        url: '../Controller/queryPreguntas.php',
+        type: 'POST',
+        beforeSend: function () {
+            $("#msg").html("Procesando, espere por favor");
+        },
+        success: function (response) {
+            LoadTablePreguntas();
+        }
+    });
+}
+
+function EliminarPregunta(id){
+    var parametros = {
+        'IdPregunta': id,
+        'delete': '1'
+    };
+    $.ajax({
+        data: parametros,
+        url: '../Controller/queryPreguntas.php',
+        type: 'POST',
+        beforeSend: function () {
+            $("#msg").html("Procesando, espere por favor");
+        },
+        success: function (response) {
+            LoadTablePreguntas();
+        }
+    });
 }

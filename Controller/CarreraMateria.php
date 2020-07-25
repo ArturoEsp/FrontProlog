@@ -6,10 +6,10 @@ if (isset($_POST['IdCarrera']) && isset($_POST['IdMateria']) && isset($_POST['Pe
     $idCarrera = $_POST['IdCarrera'];
     $idMateria = $_POST['IdMateria'];
 
-    echo "Carrera ".$idCarrera;
-    echo "Materia ".$idMateria . " ";
-    echo existRegistro($idCarrera, $idMateria);
-    /* if(existRegistro($idCarrera, $idMateria) == 0){
+  
+   
+
+    //if(existRegistro($idCarrera, $idMateria) == 0){
             $json = new stdClass();
             $json->IdCarrera = $_POST["IdCarrera"];
             $json->IdMateria = $_POST["IdMateria"];
@@ -17,7 +17,7 @@ if (isset($_POST['IdCarrera']) && isset($_POST['IdMateria']) && isset($_POST['Pe
             
             $curl = new stdClass();
             $curl->URL = "http://apache/ProyectoProlog/public/api/setCarreraMaterias";
-            $curl->VERBO = "POST";  //CHECAR
+            $curl->VERBO = "POST";  
             $curl->DATA = json_encode($json);
             
             $data = new cURLRequest();
@@ -25,11 +25,11 @@ if (isset($_POST['IdCarrera']) && isset($_POST['IdMateria']) && isset($_POST['Pe
             $resultado = $data->ApiRest($curl);
             
             $jsonresultado = json_decode($resultado->body);
-            header('Location: ../View/base-conocimientos.php');
-        }
-        else{
-            header('Location: ../View/base-conocimientos.php');
-        }  */
+            
+       // }
+        //else{
+          //  header('Location: ../View/base-conocimientos.php');
+        //}  
     }
 
     function existRegistro($IdMateria,$IdCarrera){

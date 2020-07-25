@@ -1,4 +1,5 @@
 <?php
+
 include_once '../Controller/cURLRequest.php';
 $json = new stdClass();
 $curl = new stdClass();
@@ -12,13 +13,11 @@ $resultado = $data->ApiRest($curl);
 
 $jsoncarrera = json_decode($resultado->body);
 
-//echo $jsonresultado;
-//print_r($jsonresultado);
 
 echo "<table>
             <tr>
                 <th>ID</th>
-                <th>Carrera</th>
+                <th>Materia</th>
                 <th>Eliminar</th>
             </tr>
 

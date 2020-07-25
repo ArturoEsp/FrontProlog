@@ -5,7 +5,7 @@ include_once 'cURLRequest.php';
 <?php
 if ($_POST['select'] == '1')
 {
-    echo "<select name=\"IdCarrera\">
+    echo "<select id=\"IdCarrera\">
     <option>- Carrera -</option>";
   
 
@@ -28,7 +28,7 @@ if ($_POST['select'] == '1')
     }
 
     echo "</select>
-    <select name=\"IdMateria\">
+    <select id=\"IdMateria\">
     <option>- Habilidad -</option>";
  
 
@@ -55,6 +55,33 @@ if ($_POST['select'] == '1')
 
 }
 
+if($_POST['select'] == 'materias'){
+
+    echo "
+    <option>- Habilidad -</option>";
+ 
+
+    $json = new stdClass();
+    $curl = new stdClass();
+    $curl->URL = "http://apache/ProyectoProlog/public/api/getmaterias";
+    $curl->VERBO = "GET";
+    $curl->DATA = json_encode($json);
+
+    $data = new cURLRequest();
+
+    $resultado = $data->ApiRest($curl);
+
+    $jsonmateria = json_decode($resultado->body);
+
+
+    foreach ($jsonmateria as $obj) {
+        $IdMateria = $obj->IdMateria;
+        $nombre = $obj->Nombre;
+        echo "<option value = \"$IdMateria\">$nombre</option>";
+    }
+    
+   echo "";
+}
 
 if ($_POST['table'] == '1') {
 

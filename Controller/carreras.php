@@ -19,7 +19,7 @@ if (isset($_POST['Nombre'])){
     
     $jsonresultado = json_decode($resultado->body);
     $MensajeCarrera = $jsonresultado->mensaje;
-    header('Location: ../View/base-conocimientos.php');
+    
 }
 
 if (($_GET['option'] == 'delete')){
@@ -38,5 +38,5 @@ if (($_GET['option'] == 'delete')){
     
     $jsonresultado = json_decode($resultado->body);
 
-    header('Location: ../View/base-conocimientos.php');
+   
 } 
