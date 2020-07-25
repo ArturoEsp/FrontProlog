@@ -36,5 +36,5 @@ if (($_GET['option'] == 'delete')){
     
     $jsonresultado = json_decode($resultado->body);
 
-   
+    header('Location: ../View/base-conocimientos.php');
 } 
