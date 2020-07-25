@@ -37,16 +37,43 @@ foreach ($array as $value) {
     $array2 = json_decode(GetPesoMateria($value['IdMateria']));
 
     foreach ($array2 as $obj) {
-        echo $obj->Peso;
+        $varMat = $obj->Peso;
+        $varPre = $value['Peso'];
+        //CalcularPregunta($obj->Peso,GetPesoMateria($value['IdMateria']));
+        $Resul += CalcularPregunta(json_decode($varPre),json_decode($varMat));
+        //var_dump($Resultado);
     }
 
-
+    //var_dump($Resultado);
 
    // CalcularPregunta($value['Peso'], $PesoPregunta);
 }
 
+CalculaResultado($Resul);
 
+function CalculaResultado($Resul){
+    $json = new stdClass();
+    $respuestas = new stdClass();
+    $curl = new stdClass();
+    $curl->URL = "http://apache/ProyectoProlog/public/api/getTotal";
+    $curl->VERBO = "GET";
+    $curl->DATA = json_encode($json);
 
+    $data = new cURLRequest();
+    $resultado = $data->ApiRest($curl);
+
+    $jsonresultado = json_decode($resultado->body);
+
+    foreach ($jsonresultado as $obj) {
+        $Nombre = $obj->Nombre;
+        $PesoTotal = $obj->PesoTotal;
+
+        $valorCarrera = (100 / $PesoTotal) * $Resul;
+
+        echo "El porcentaje de la carrera: ".$Nombre." es: ".$valorCarrera."%";
+    }
+
+}
 //$jsonRespuestas = json_encode($array);
 //var_dump($jsonRespuestas);
 
@@ -55,10 +82,15 @@ foreach ($array as $value) {
 
 function CalcularPregunta($PesoPregunta, $PesoMateria)
 {
-
-    $resultado = 0;
+    $var1=$PesoPregunta;
+    $var2=$PesoMateria;
+    //var_dump($var1);
+    //var_dump($var2);
+    
+    $resultado = 0.0;
     if ($PesoPregunta != 0 || $PesoMateria != 0) {
-        $resultado = $PesoPregunta * $PesoMateria / 10;
+        $resultado = $var1 * $var2 / 10.0;
+        //var_dump($resultado);
     }
     return $resultado;
 }

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Vocacional</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 
@@ -29,7 +30,7 @@
 
                     $jsonresultado = json_decode($resultado->body);
                 
-                    echo"<form action='..\Controller\Motor.php?' method='GET'>";
+                    echo"<form action='..\Controller\Motor.php?' method='GET' class='test'>";
                     foreach ($jsonresultado as $obj) {
                         $IdPregunta = $obj->IdPregunta;
                         $IdMateria = $obj->IdMateria;
@@ -47,7 +48,7 @@
                         //$array[] = array("IdPregunta"=>$IdPregunta,"PesoRespuesta"=>$_POST["PesoRespuesta"]);
                         
                     }
-                    echo"       <input type=\"submit\" value=\"Ingresar\" class=\"btnlogin\">
+                    echo"       <button type=\"submit\" value=\"Ingresar\" class=\"btnEnviar\">Enviar Test</button>
                             </form>";
                 ?>
         </div>

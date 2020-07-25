@@ -719,5 +719,21 @@ th {
     text-align: center;
     position: relative;
   }
+  .test{
+    padding-top: 25px;
+  }
+  
+  .test .btnEnviar{
+    margin-top: 10%;
+    width: 100%;
+    outline: 0;
+    border: 0;
+    padding: 20px 15px;
+    font-weight: 500;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
  
   
