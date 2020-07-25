@@ -29,11 +29,11 @@ foreach ($jsonresultado as $obj) {
 
     $array[] = array("IdPregunta" => $_GET[$varid], "Peso" => $_GET[$varpeso], "IdMateria" => $IdMateria);
 }
-
+$Resul = 0;
 foreach ($array as $value) {
 
     $array2 = json_decode(GetPesoMateria($value['IdMateria']));
-
+    
     foreach ($array2 as $obj) {
         $varMat = $obj->Peso;
         $varPre = $value['Peso'];
@@ -42,12 +42,11 @@ foreach ($array as $value) {
         //var_dump($Resultado);
             
     }
-    CalculaResultado($Resul);
-    break;
+    
+    //break;
     // CalcularPregunta($value['Peso'], $PesoPregunta);
 }
-
-
+CalculaResultado($Resul);
 function CalculaResultado($Resul){
     $json = new stdClass();
     $respuestas = new stdClass();
@@ -64,9 +63,11 @@ function CalculaResultado($Resul){
     foreach ($jsonresultado as $obj) {
         $Nombre = $obj->Nombre;
         $PesoTotal = $obj->PesoTotal;
+        $pesoFinal = floatval($PesoTotal);
         //var_dump($PesoTotal);
+        //var_dump($Resul);
         $valorCarrera = (100 / $PesoTotal) * $Resul;
-
+        //var_dump($valorCarrera);
         echo "El porcentaje de la carrera: ".$Nombre." es: ".$valorCarrera."%<br>";
     }
     
