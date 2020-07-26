@@ -77,15 +77,15 @@
         bubble.innerHTML = val;
 
         if (val > 8) {
-            bubble.innerHTML = "Simona la mona"; //Siempre
+            bubble.innerHTML = "Totalmente de acuerdo"; //Siempre
         } else if (val >= 7) {
-            bubble.innerHTML = "sip"; //De Acuerdo
+            bubble.innerHTML = "De acuerdo"; //De Acuerdo
         } else if (val >= 4) {
-            bubble.innerHTML = "Hay maso"; // A veces
+            bubble.innerHTML = "Indiferente"; // A veces
         } else if (val >= 1) {
-            bubble.innerHTML = "nel krnal"; // En desacuerdo
+            bubble.innerHTML = "En desacuerdo"; // En desacuerdo
         } else {
-            bubble.innerHTML = "nelson mandela"; //Nunca
+            bubble.innerHTML = "Totalmente de desacuerdo"; //Nunca
         }
 
         // Sorta magic numbers based on size of the native UI thumb
