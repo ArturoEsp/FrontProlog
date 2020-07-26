@@ -11,24 +11,16 @@
 <body>
     <?php
     include 'menu-header.html';
+    
     ?>
     <div class="w3-container w3-padding-16">
         <h2 class="w3-text-blue w3-center"> RESULTADOS </h2>
-        <div class="w3-content w3-row-padding">
-            <div class="w3-third">
-                <div class="w3-card-4 w3-padding w3-center">
-                <img src="..\assets\images\tercer.png"  width="60%">
-                    <h2>Segundo resultado</h2>
-                    <p>
-                        <br>
-                        <h4>IGE por que te gustan los culos</h4>
-                        <br>
-                    </p>
-                </div>
-
-            </div>
-
-            <!---->
+        <div class="w3-content w3-row-padding" style="width:100%">
+            <?php
+            include_once '../Controller/Motor.php';
+            ?>
+            
+            <!--
             <div class="w3-third">
                 <div class="w3-card-4 w3-padding w3-center">
                 <img src="..\assets\images\primer.png"  width="60%">
@@ -39,12 +31,27 @@
                         <br>
                     </p>
                 </div>
+            </div>
+
+            <div class="w3-third">
+                <div class="w3-card-4 w3-padding w3-center">
+                <img src="..\assets\images\segundo.png"  width="60%">
+                    <h2>Segundo resultado</h2>
+                    <h3>
+                        
+                    </h3>
+                    <p>
+                        <br>
+                        <h4>IGE por que te gustan los culos</h4>
+                        <br>
+                    </p>
+                </div>
 
             </div>
 
             <div class="w3-third">
                 <div class="w3-card-4 w3-padding w3-center">
-                <img src="..\assets\images\segundo.png" width="60%">
+                <img src="..\assets\images\.png" width="60%">
                     <h2>Tercer resultado</h2>
                     <p>
                     <br>
@@ -54,7 +61,7 @@
                 </div>
 
             </div>
-            <!---->
+            -->
             
         </div>
     </div>
