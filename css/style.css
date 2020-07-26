@@ -736,4 +736,18 @@ th {
     cursor: pointer;
   }
  
+
+  .contenedores{
+    display:flex;
+    justify-content:center;
+    background-color: red;
+  }
+  .contenedor{
+    background-color: #245483;
+    text-align:center;
+    width:50%;
+  }
+  .carrera{
+    color:#fff;
+  }
   
