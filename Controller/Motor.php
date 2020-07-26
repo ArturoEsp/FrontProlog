@@ -79,10 +79,18 @@ function CalculaResultado($Resul,$id){
         $PesoTotal = $obj->PesoTotal;
         $valorCarrera = (100 / $PesoTotal) * $Resul;
     }
+    $valor=round($valorCarrera, 2);
+    if($valor >= 70){
+        $color = '#28a745';
+    }else if($valor < 70 && $valor >= 40){
+        $color = '#ffc107';
+    }else{
+        $color = '#dc3545';
+    }
     echo"
         
-        <div class=\"container\" style=\"text-align:center;background-color:#245483;padding: 10px;color: #fff;width:$valorCarrera%;margin:10px auto;\">
-            <h3>$Nombre: $valorCarrera%</h3>
+        <div class=\"container\" style=\"text-align:center;background-color:$color;padding: 10px;color: #fff;width:$valor%;margin:10px auto;\">
+            <h3>$Nombre: $valor%</h3>
         </div>
     ";
 }
